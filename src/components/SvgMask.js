@@ -146,8 +146,22 @@ export default function SvgMask({
           pointerEvents="auto"
         />
         <rect
+          x={left - 8}
+          y={top - 8}
+          rx={5}
+          ry={5}
+          width={width + 16}
+          height={height + 16}
+          pointerEvents="auto"
+          fill="transparent"
+          display={disableInteraction ? 'block' : 'none'}
+          className="interaction-area-wrapper"
+        />
+        <rect
           x={left}
           y={top}
+          rx={5}
+          ry={5}
           width={width}
           height={height}
           pointerEvents="auto"
