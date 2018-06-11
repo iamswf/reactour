@@ -418,6 +418,7 @@ class TourPortal extends Component {
             })}
           >
             <SvgMask
+              showDashBorder={!!steps[current].selector}
               windowWidth={windowWidth}
               windowHeight={windowHeight}
               targetWidth={targetWidth}

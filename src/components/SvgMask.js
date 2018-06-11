@@ -26,6 +26,7 @@ export default function SvgMask({
   disableInteraction,
   disableInteractionClassName,
   className,
+  showDashBorder
 }) {
   const width = hx.safe(targetWidth + padding * 2)
   const height = hx.safe(targetHeight + padding * 2)
@@ -145,18 +146,20 @@ export default function SvgMask({
           clipPath="url(#clip-path)"
           pointerEvents="auto"
         />
-        <rect
-          x={left - 8}
-          y={top - 8}
-          rx={5}
-          ry={5}
-          width={width + 16}
-          height={height + 16}
-          pointerEvents="auto"
-          fill="transparent"
-          display={disableInteraction ? 'block' : 'none'}
-          className="interaction-area-wrapper"
-        />
+        {showDashBorder ? (
+          <rect
+            x={left - 8}
+            y={top - 8}
+            rx={5}
+            ry={5}
+            width={width + 16}
+            height={height + 16}
+            pointerEvents="auto"
+            fill="transparent"
+            display={disableInteraction ? 'block' : 'none'}
+            className="interaction-area-wrapper"
+          />
+        ) : null}
         <rect
           x={left}
           y={top}
